@@ -1,4 +1,4 @@
-var camera = 1;
+var camera = 2;
 var image = document.getElementById('stream');
 
 window.onload = function () {
@@ -20,7 +20,7 @@ window.onload = function () {
 
   document.getElementById("Up1").addEventListener('click', function (e) {
     e.preventDefault();
-    Control(camera, "1");
+    Control(camera, "2");
   });
 
   document.getElementById("Down1").addEventListener('click', function (e) {
@@ -30,7 +30,7 @@ window.onload = function () {
 
   document.getElementById("Left1").addEventListener('click', function (e) {
     e.preventDefault();
-    Control(camera, "2");
+    Control(camera, "1");
   });
 
   document.getElementById("Right1").addEventListener('click', function (e) {
@@ -40,14 +40,13 @@ window.onload = function () {
 
   this.document.getElementById("CAM1").addEventListener('click', function (e) {
     e.preventDefault();
-    camera = 1;
-    console.log(camera);
-    image.src = "http://192.168.0.3:8091/?action=stream"
+    location.href='slide0.html'
   });
 
   this.document.getElementById("CAM2").addEventListener('click', function (e) {
     e.preventDefault();
-    location.href = 'slide1.html';
+    camera = 2;
+    image.src = "http://192.168.0.34:8091/?action=stream"
   });
 }
 
@@ -56,7 +55,7 @@ function Control(num, action) {
   var state;
 
   var ae = "zone1";
-  var cnt = "cam1";
+  var cnt = "cam2";
   var cin = action;
 
   if (num == 1) {

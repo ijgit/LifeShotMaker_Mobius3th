@@ -117,100 +117,90 @@
                                                         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31adcaf17249f4348e4b0a6ddda67c21"></script>
                                                         <script>
                                                         var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-                                                            mapOption = { 
-                                                                center: new kakao.maps.LatLng(36.769683, 126.931789), // 지도의 중심좌표
-                                                                level: 2 // 지도의 확대 레벨
-                                                            };
-                                                        
-                                                        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
-                                                         
-                                                        // 마커를 표시할 위치와 title 객체 배열입니다 
-                                                        var positions = [
-                                                            {
-                                                                title: 'cam1', 
-                                                                latlng: new kakao.maps.LatLng(36.769537, 126.930117)
-                                                            },
-                                                            {
-                                                                title: 'cam2', 
-                                                                latlng: new kakao.maps.LatLng(36.769640, 126.931900)
-                                                            },
-                                                            {
-                                                                title: 'cam3', 
-                                                                latlng: new kakao.maps.LatLng(36.768583, 126.930364)
-                                                            },
-                                                            
-                                                        ];
-                                                        
-                                                        // 마커 이미지의 이미지 주소입니다
-                                                        var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-                                                            
-                                                        for (var i = 0; i < positions.length; i ++) {
-                                                            
-                                                            // 마커 이미지의 이미지 크기 입니다
-                                                            var imageSize = new kakao.maps.Size(24, 35); 
-                                                            
-                                                            // 마커 이미지를 생성합니다    
-                                                            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-                                                            
-                                                            // 마커를 생성합니다
-                                                            var marker = new kakao.maps.Marker({
-                                                                map: map, // 마커를 표시할 지도
-                                                                position: positions[i].latlng, // 마커를 표시할 위치
-                                                                title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                                                                image : markerImage, // 마커 이미지 
-                                                                clickable: true
-                                                            });
-                                                        }
-                                                        
-                                                        var iwContent = '<div style="padding:5px;"></div>'
-                                        					+ '<a href="camera.html">Photozone2</a>'
-                                                                    		+ '<img src = "../images/place2.jpg" style="width:50px;">'
-                                                                    ,
-                 						                                                   
-                                                            iwPosition = new kakao.maps.LatLng(36.769537, 126.930117), //인포윈도우 표시 위치입니다
-                                                        iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
-                                                        
-                                                        var infowindow = new kakao.maps.InfoWindow({
-                                                            map: map, // 인포윈도우가 표시될 지도
-                                                            position : iwPosition, 
-                                                            content : iwContent,
-                                                            removable : iwRemoveable
-                                                        });
-                                                        
-                                                        var iwContent = '<div style="padding:5px;"></div>'
-                                                        						+ '<a href="camera.html">Photozone2</a>'
-                                                                    + '<img src = "../images/place2.jpg" style="width:50px;">'
-                                                                    ,
-                                                                     // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                                                        iwPosition = new kakao.maps.LatLng(36.769640, 126.931900), //인포윈도우 표시 위치입니다
-                                                        iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
-                                                        
-                                                        var infowindow = new kakao.maps.InfoWindow({
-                                                            map: map, // 인포윈도우가 표시될 지도
-                                                            position : iwPosition, 
-                                                            content : iwContent,
-                                                            removable : iwRemoveable
-                                                        });
-                                                        
-                                                        var iwContent = '<div style="padding:5px;"></div>'
-                                                                                + '<a href="camera.html">Photozone3</a>' +
-                                                                                '<img src = "../images/place3.jpg" style="width:50px;">', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                                                        iwPosition = new kakao.maps.LatLng(36.768566, 126.930364), //인포윈도우 표시 위치입니다
-                                                        iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
-                                                        
-                                                        var infowindow = new kakao.maps.InfoWindow({
-                                                            map: map, // 인포윈도우가 표시될 지도
-                                                            position : iwPosition, 
-                                                            content : iwContent,
-                                                            removable : iwRemoveable
-                                                        });
-                                                        
-                                                     // 마커에 클릭이벤트를 등록합니다
-                                                        kakao.maps.event.addListener(marker, 'click', function() {
-                                                              // 마커 위에 인포윈도우를 표시합니다
-                                                              infowindow.open(map, marker);  
-                                                        });
-                                                        
+                            mapOption = {
+                              center: new kakao.maps.LatLng(37.482836, 127.035719), // 지도의 중심좌표
+                              level: 1 // 지도의 확대 레벨
+                            };
+
+                          var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+                          // 마커를 표시할 위치와 title 객체 배열입니다 
+                          var positions = [
+                            {
+                              title: 'cam1',
+                              latlng: new kakao.maps.LatLng(37.482756, 127.035347)
+                            },
+                            {
+                              title: 'cam2',
+                              latlng: new kakao.maps.LatLng(37.482583, 127.034769)
+                            },
+                            {
+                              title: 'cam3',
+                              latlng: new kakao.maps.LatLng(37.482296, 127.035861)
+                            },
+
+                          ];
+
+                          // 마커 이미지의 이미지 주소입니다
+                          var imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+                          for (var i = 0; i < positions.length; i++) {
+
+                            // 마커 이미지의 이미지 크기 입니다
+                            var imageSize = new kakao.maps.Size(24, 35);
+
+                            // 마커 이미지를 생성합니다    
+                            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+                            // 마커를 생성합니다
+                            var marker = new kakao.maps.Marker({
+                              map: map, // 마커를 표시할 지도
+                              position: positions[i].latlng, // 마커를 표시할 위치
+                              title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                              image: markerImage, // 마커 이미지 
+                              clickable: true
+                            });
+                          }
+                        
+                          iwPosition = new kakao.maps.LatLng(37.482756, 127.035347), //인포윈도우 표시 위치입니다
+                            iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+                          var infowindow = new kakao.maps.InfoWindow({
+                            map: map, // 인포윈도우가 표시될 지도
+                            position: iwPosition,
+                            content: zone1_state, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                            removable: iwRemoveable
+                          });
+
+                        
+                            iwPosition = new kakao.maps.LatLng(37.482583, 127.034769), //인포윈도우 표시 위치입니다
+                            iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+                          var infowindow = new kakao.maps.InfoWindow({
+                            map: map, // 인포윈도우가 표시될 지도
+                            position: iwPosition,
+                            content: zone2_state,
+                            removable: iwRemoveable
+                          });
+
+                          var iwContent = '<div style="padding:5px;"></div>'
+                            + '<a>Photozone3<br><em style="color: gray">Not Available</a>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                            iwPosition = new kakao.maps.LatLng(37.482296, 127.035861), //인포윈도우 표시 위치입니다
+                            iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+                          var infowindow = new kakao.maps.InfoWindow({
+                            map: map, // 인포윈도우가 표시될 지도
+                            position: iwPosition,
+                            content: iwContent,
+                            removable: iwRemoveable
+                          });
+
+                          // 마커에 클릭이벤트를 등록합니다
+                          kakao.maps.event.addListener(marker, 'click', function () {
+                            // 마커 위에 인포윈도우를 표시합니다
+                            infowindow.open(map, marker);
+                          });
+
                                                         </script>
 
 															<br>

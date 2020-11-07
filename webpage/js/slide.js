@@ -60,7 +60,7 @@ function getUrl(userid) {
         var len = Object.keys(data).length
         console.log(len);
 
-
+/*
         for (i = 0; i < len; i++) {
             var picidx = String(i + 1) + " / " + String(len);
             console.log(picidx);
@@ -74,6 +74,21 @@ function getUrl(userid) {
 
 
         }
+        */
+       for (i = len-1; i >= 0; i--) {
+        var picidx = String(len -i) + " / " + String(len);
+        console.log(picidx);
+
+
+        var data_ = data[i];
+        data_ = data_["con"];
+        var picUrl = data_["url"];
+        console.log(picUrl);
+        getData(picUrl, picidx);
+
+
+    }
+    
     });
 }
 

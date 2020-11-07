@@ -29,8 +29,8 @@
 /* TODO: why does Opera not display the rotation buttons? */
   if(controls){
     controls.innerHTML =  '<div id="change">' +
-                            '<button class="zoomin"><img src="images/plus.png" style="width:20px"></button>' +
-                            '<button class="zoomout"><img src="images/minus.png" style="width:20px"></button>' +
+                            '<button class="zoomin">+</button>' +
+                            '<button class="zoomout">-</button>' +
                           '</div>';
   }
 /* If a button was clicked (uses event delegation)...*/
