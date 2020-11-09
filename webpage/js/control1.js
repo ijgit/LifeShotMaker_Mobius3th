@@ -20,7 +20,7 @@ window.onload = function () {
 
   document.getElementById("Up1").addEventListener('click', function (e) {
     e.preventDefault();
-    Control(camera, "2");
+    Control(camera, "4");
   });
 
   document.getElementById("Down1").addEventListener('click', function (e) {
