@@ -35,21 +35,16 @@ function check(){
 			  } 	
 			 
 		   if(chkbox[i].checked){
-              var ip = "http://192.168.0.11:1234/images/download/" + userId + "?obj=";			  
-			  var str1 = chkbox[i].value;
-			  var str2=""; 
-			  
-			  for(var j = 43; j < str1.length; j++){			  
-			          str2 = str2 + str1[j];			  			   
-			   }
-			  
-			
 
-			  var filename = "lifeshotmaker" + text + counter++;
+			  var ip = "http://192.168.0.6:1235/images/download/" + userId + "?obj=";
+			  var str1 = String(chkbox[i].value);
+			  var split_str = str1.split('=');
+	  
+			  var filename = "lifeshotmaker" + text + (counter++).toString();      
+			  ip = ip + split_str[1] + "&idx=" + String(filename);
 			  
-			  ip = ip + str2 + "&idx=" + filename;
+			  location.href = ip;
 
-			  location.href = ip;		
 			
 		   }		   
 		   

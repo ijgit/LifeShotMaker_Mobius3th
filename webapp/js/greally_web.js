@@ -16,7 +16,7 @@ window.onload = function () {
     }
     document.getElementById("send").addEventListener('click', function (e) {
         e.preventDefault();
-        sendEmail();   
+        sendEmail();
         console.log("send email");
         alert('mail sending...');
         modal.style.display = "none";
@@ -24,11 +24,11 @@ window.onload = function () {
     });
     document.getElementById("later").addEventListener('click', function (e) {
         e.preventDefault();
-        location.href='contact.html';
+        location.href = 'contact.html';
     });
     document.getElementById("quit").addEventListener('click', function (e) {
         e.preventDefault();
-        location.href='index.html';
+        location.href = 'index.html';
     });
 }
 
@@ -38,43 +38,43 @@ var data;
 var data_;
 var state;
 
-  var ae = "zone1"; //Id(camera1)에 맞춰 수정 필요
-  var cnt = "state";
-  var cin = "0";
-  var addr = "http://192.168.0.11:7599/rosemary";
-  var settings;
+var ae = "zone1"; //Id(camera1)에 맞춰 수정 필요
+var cnt = "state";
+var cin = "0";
+var addr = "http://192.168.0.6:7599/rosemary";
+var settings;
 
-  console.log(cin);
-  state = 3;
-  addr = addr + "/" + ae + "/" + cnt;
-  settings = {
+console.log(cin);
+state = 3;
+addr = addr + "/" + ae + "/" + cnt;
+settings = {
     "async": true,
     "crossDomain": true,
     "url": addr,
     "method": "POST",
     "headers": {
-      "Accept": "application/json",
-      "X-M2M-RI": "12345",
-      "X-M2M-Origin": "SxBMnw8TT5b",
-      "Content-Type": "application/json; ty=4",
+        "Accept": "application/json",
+        "X-M2M-RI": "12345",
+        "X-M2M-Origin": "SxBMnw8TT5b",
+        "Content-Type": "application/json; ty=4",
     },
     "data": "{\n    \"m2m:cin\": {\n        \"con\": \"" + cin + "\" \n    }\n}"
-  }
+}
 
-  $.ajax(settings).done(function (response) {
-      console.log(response);
-    });
+$.ajax(settings).done(function (response) {
+    console.log(response);
+});
 
 var settings = {
     "async": false,
     "crossDomain": true,
-    "url": "http://192.168.0.11:7599/rosemary/zone1/currentUser/la",
+    "url": "http://192.168.0.6:7599/rosemary/zone1/currentUser/la",
     "method": "GET",
     "headers": {
         "Accept": "application/json",
         "X-M2M-RI": "1dfada2345",
         "X-M2M-Origin": "S20170717074825768bp2l",
-        "Host": "http://192.168.0.11:7599"
+        "Host": "http://192.168.0.6:7599"
     }
 };
 $.ajax(settings).done(function (response) {
@@ -90,10 +90,14 @@ $.ajax(settings).done(function (response) {
     userId = value;
 });
 
+
+
+
+
 var settings = {
     "async": false,
     "crossDomain": true,
-    "url": "http://203.253.128.161:7579/Mobius/lsm/" + userId + "?lim=10&rcn=4",
+    "url": "http://192.168.0.6:7599/rosemary/zone1/" + userId + "?lim=10&rcn=4",
     "method": "GET",
     "headers": {
         "Accept": "application/json",
@@ -138,14 +142,14 @@ $.ajax(settings).done(function (response) {
     }
 });
 
-function sendEmail(){
-    var mailaddress=document.getElementById("inputmail").value
+function sendEmail() {
+    var mailaddress = document.getElementById("inputmail").value
     var state;
 
-    var ae = "zone1"; 
+    var ae = "zone1";
     var cnt = "email";
     var cin = mailaddress;
-    var addr = "http://192.168.0.11:7599/rosemary";
+    var addr = "http://192.168.0.6:7599/rosemary";
     var settings;
     state = 3;
     addr = addr + "/" + ae + "/" + cnt;

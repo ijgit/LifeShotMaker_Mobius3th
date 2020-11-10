@@ -9,7 +9,7 @@ var state;
   var ae = "zone1"; //Id(camera1)에 맞춰 수정 필요
   var cnt = "state";
   var cin = "0";
-  var addr = "http://192.168.0.11:7599/rosemary";
+  var addr = "http://192.168.0.6:7599/rosemary";
   var settings;
 
   console.log(cin);
@@ -36,13 +36,13 @@ var state;
 var settings = {
     "async": false,
     "crossDomain": true,
-    "url": "http://192.168.0.11:7599/rosemary/zone1/currentUser/la",
+    "url": "http://192.168.0.6:7599/rosemary/zone1/currentUser/la",
     "method": "GET",
     "headers": {
         "Accept": "application/json",
         "X-M2M-RI": "1dfada2345",
         "X-M2M-Origin": "S20170717074825768bp2l",
-        "Host": "http://192.168.0.11:7599"
+        "Host": "http://192.168.0.6:7599"
     }
 };
 $.ajax(settings).done(function (response) {

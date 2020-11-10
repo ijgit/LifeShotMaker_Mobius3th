@@ -7,22 +7,19 @@ window.onload = function () {
     e.preventDefault();
     Control(camera, "5");
   });
-
   document.getElementById("Shoot1").addEventListener('click', function (e) {
     e.preventDefault();
-
-    /* setInterval(function(){
-     console.log("stream reset");
-     var image=document.getElementById('stream');
-     image.src="http://192.168.0.3:8091/?action=stream";},2000); */
-
   });
 
   document.getElementById("Up1").addEventListener('click', function (e) {
     e.preventDefault();
     Control(camera, "1");
   });
-
+  
+  document.getElementById("Right1").addEventListener('click', function (e) {
+    e.preventDefault();
+    Control(camera, "2");
+  });
   document.getElementById("Down1").addEventListener('click', function (e) {
     e.preventDefault();
     Control(camera, "3");
@@ -30,13 +27,9 @@ window.onload = function () {
 
   document.getElementById("Left1").addEventListener('click', function (e) {
     e.preventDefault();
-    Control(camera, "2");
-  });
-
-  document.getElementById("Right1").addEventListener('click', function (e) {
-    e.preventDefault();
     Control(camera, "4");
   });
+
 
   this.document.getElementById("CAM1").addEventListener('click', function (e) {
     e.preventDefault();
@@ -46,7 +39,7 @@ window.onload = function () {
   this.document.getElementById("CAM2").addEventListener('click', function (e) {
     e.preventDefault();
     camera = 2;
-    image.src = "http://192.168.0.34:8091/?action=stream"
+    image.src = "http://192.168.0.42:8091/?action=stream"
   });
 }
 
@@ -70,7 +63,7 @@ function Control(num, action) {
   }
 
 
-  var addr = "http://192.168.0.11:7599/rosemary";
+  var addr = "http://192.168.0.6:7599/rosemary";
   var settings;
 
   state = 3;
@@ -93,30 +86,3 @@ function Control(num, action) {
     console.log(response);
   });
 }
-
-  //added by sw////////////////////////////////////////////////
-  //  console.log("stream stop");
-  //  var image=document.getElementById('stream');
-  //  image.src="images/waitlogo.png";
-  //
-  //  if (num == 1){
-  //    setTimeout(function(){
-  //      console.log("stream reset");
-  //      var image=document.getElementById('stream');
-  //      image.src="http://192.168.0.3:8091/?action=stream";},2000);
-  //    setTimeout(function () {
-  //      console.log("stream reset2");
-  //      var image = document.getElementById('stream');
-  //      image.src = "http://192.168.0.3:8091/?action=stream";},5000);
-  //  } else {
-  //    setTimeout(function(){
-  //    console.log("stream reset");
-  //    var image=document.getElementById('stream');
-  //    image.src="http://192.168.0.35:8091/?action=stream";},2000);
-  //  setTimeout(function () {
-  //    console.log("stream reset2");
-  //    var image = document.getElementById('stream');
-  //    image.src = "http://192.168.0.35:8091/?action=stream";},5000);
-  //  }
-  //////////////////////////////////////////////////////////////
-  // image.src = "http://192.168.0.35:8091/?action=stream";},5000);

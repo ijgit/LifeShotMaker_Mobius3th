@@ -15,7 +15,7 @@ function sendEmail(){
     var ae = "zone2"; 
     var cnt = "email";
     var cin = mailaddress;
-    var addr = "http://192.168.0.11:7599/rosemary";
+    var addr = "http://192.168.0.6:7599/rosemary";
     var settings;
     state = 3;
     addr = addr + "/" + ae + "/" + cnt;

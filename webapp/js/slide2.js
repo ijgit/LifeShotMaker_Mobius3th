@@ -1,4 +1,4 @@
-var rosemary = "192.168.0.11:7599/rosemary";
+var rosemary = "192.168.0.6:7599/rosemary";
 var ae = "/zone2"
 var con = "/currentUser"
 

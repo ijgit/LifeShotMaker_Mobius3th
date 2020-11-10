@@ -12,7 +12,7 @@ window.onload = function () {
   var ae = "zone1"; //Id(camera1)에 맞춰 수정 필요
   var cnt = "state";
   var cin = "1";
-  var addr = "http://192.168.0.11:7599/rosemary";
+  var addr = "http://192.168.0.6:7599/rosemary";
   var settings;
 
   console.log(cin);
@@ -76,7 +76,7 @@ function madeId() {
     var ae = "zone1"; //Id(camera2)에 맞춰 수정 필요
     var cnt = "currentUser";
     var cin = id;
-    var addr = "http://192.168.0.11:7599/rosemary";
+    var addr = "http://192.168.0.6:7599/rosemary";
     var settings;
 
     state = 3;
@@ -105,7 +105,7 @@ function madeId() {
   
     var ae = "zone1"; //Id(camera2)에 맞춰 수정 필요
     var cnt = id;
-    var addr = "http://192.168.0.11:7599/rosemary";
+    var addr = "http://192.168.0.6:7599/rosemary";
     var settings;
   
     state = 2;
